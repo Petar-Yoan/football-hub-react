@@ -6,6 +6,8 @@ import Teams from './pages/Teams';
 import Matches from './pages/Matches';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Create from './pages/Create';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/matches" element={<Matches />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/create" element={<Create />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );
