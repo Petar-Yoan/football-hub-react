@@ -5,9 +5,27 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [error, setError] = useState('');
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (
+      !username.trim() ||
+      !email.trim() ||
+      !password.trim() ||
+      !repeatPassword.trim()
+    ) {
+      setError('Please fill in all fields.');
+      return;
+    }
+
+    if (password !== repeatPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    setError('');
     console.log('Register data:', {
       username,
       email,
@@ -22,6 +40,8 @@ function Register() {
         <h1>Register</h1>
 
         <form className="auth-form" onSubmit={submitHandler}>
+          {error && <p className="form-error">{error}</p>}
+
           <div className="form-group">
             <label htmlFor="register-username">Username</label>
             <input

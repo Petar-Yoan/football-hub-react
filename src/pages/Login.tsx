@@ -3,9 +3,17 @@ import { useState } from 'react';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!email.trim() || !password.trim()) {
+      setError('Please fill in all fields.');
+      return;
+    }
+
+    setError('');
     console.log('Login data:', { email, password });
   };
 
@@ -15,6 +23,8 @@ function Login() {
         <h1>Login</h1>
 
         <form className="auth-form" onSubmit={submitHandler}>
+          {error && <p className="form-error">{error}</p>}
+
           <div className="form-group">
             <label htmlFor="login-email">Email</label>
             <input
@@ -45,4 +55,5 @@ function Login() {
     </section>
   );
 }
+
 export default Login;
