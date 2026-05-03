@@ -1,9 +1,14 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useAuth } from '../contexts/AuthContext';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -13,8 +18,15 @@ function Login() {
       return;
     }
 
+    const result = login({ email, password });
+
+    if (!result.success) {
+      setError(result.message);
+      return;
+    }
+
     setError('');
-    console.log('Login data:', { email, password });
+    navigate('/profile');
   };
 
   return (

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useAuth } from '../contexts/AuthContext';
 
 function Register() {
   const [username, setUsername] = useState('');
@@ -6,6 +8,9 @@ function Register() {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const [error, setError] = useState('');
+
+  const { register } = useAuth();
+  const navigate = useNavigate();
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,13 +30,15 @@ function Register() {
       return;
     }
 
+    const result = register({ username, email, password });
+
+    if (!result.success) {
+      setError(result.message);
+      return;
+    }
+
     setError('');
-    console.log('Register data:', {
-      username,
-      email,
-      password,
-      repeatPassword,
-    });
+    navigate('/profile');
   };
 
   return (
