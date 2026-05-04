@@ -1,0 +1,70 @@
+{
+  "users": [],
+  "teams": [
+  {
+    "id": 1,
+    "name": "Sporting CP",
+    "country": "Portugal",
+    "stadium": "Estadio Jose Alvalade",
+    "coach": "Rui Borges",
+    "imageUrl": "/images/sporting.png",
+    "description": "Sporting CP is one of the three biggest football clubs in Portugal."
+  },
+  {
+    "id": 2,
+    "name": "SL Benfica",
+    "country": "Portugal",
+    "stadium": "Estadio da Luz",
+    "coach": "Bruno Lage",
+    "imageUrl": "/images/benfica.png",
+    "description": "SL Benfica is one of the most successful Portuguese football clubs."
+  },
+  {
+    "id": 3,
+    "name": "FC Porto",
+    "country": "Portugal",
+    "stadium": "Estadio do Dragao",
+    "coach": "Martin Anselmi",
+    "imageUrl": "/images/porto.png",
+    "description": "FC Porto is one of the most successful and popular clubs in Portugal."
+  }
+],
+ "matches": [
+  {
+    "id": 1,
+    "homeTeam": "Sporting CP",
+    "awayTeam": "SL Benfica",
+    "date": "2026-05-15",
+    "stadium": "Estadio Jose Alvalade",
+    "score": "2:1"
+  },
+  {
+    "id": 2,
+    "homeTeam": "FC Porto",
+    "awayTeam": "Sporting CP",
+    "date": "2026-05-18",
+    "stadium": "Estadio do Dragao",
+    "score": "1:1"
+  },
+  {
+    "id": 3,
+    "homeTeam": "SL Benfica",
+    "awayTeam": "FC Porto",
+    "date": "2026-05-22",
+    "stadium": "Estadio da Luz",
+    "score": "3:2"
+  }
+],
+ "news": [
+  {
+    "id": 1,
+    "title": "Big Derby in Lisbon",
+    "content": "Sporting CP will face SL Benfica in one of the biggest matches in Portuguese football."
+  },
+  {
+    "id": 2,
+    "title": "FC Porto Ready for the Clash",
+    "content": "FC Porto is preparing for an important match against Sporting CP at Estadio do Dragao."
+  }
+]
+}

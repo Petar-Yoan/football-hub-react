@@ -134,3 +134,73 @@
   background-color: #16a34a;
   color: #ffffff;
 }
+
+.page-section {
+  padding: 32px;
+}
+
+.page-section h1 {
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+.teams-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.team-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.team-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  border-top: 6px solid transparent;
+}
+
+.team-card__title {
+  margin-top: 0;
+}
+
+.team-card--sporting {
+  border-top-color: #16a34a;
+  background-color: #f0fdf4;
+}
+
+.team-card--sporting .team-card__title {
+  color: #166534;
+}
+
+.team-card--benfica {
+  border-top-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.team-card--benfica .team-card__title {
+  color: #991b1b;
+}
+
+.team-card--porto {
+  border-top-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.team-card--porto .team-card__title {
+  color: #1d4ed8;
+}
