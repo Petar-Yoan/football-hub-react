@@ -9,6 +9,11 @@ type Match = {
   date: string;
   stadium: string;
   score: string;
+  competition: string;
+  round: string;
+  referee: string;
+  status: string;
+  description: string;
 };
 
 function MatchDetails() {
@@ -43,20 +48,43 @@ function MatchDetails() {
       {error && <p className="form-error">{error}</p>}
 
       {match && (
-        <article className="details-card">
-          <div className="details-card__content">
+        <article className="match-details-card">
+          <div className="match-details-card__hero">
+            <span className="match-details-card__competition">
+              {match.competition}
+            </span>
+            <span className="match-details-card__status">{match.status}</span>
+
             <h1>
-              {match.homeTeam} vs {match.awayTeam}
+              {match.homeTeam} <span>vs</span> {match.awayTeam}
             </h1>
-            <p>
-              <strong>Date:</strong> {match.date}
-            </p>
+
+            <div className="match-details-card__score">{match.score}</div>
+          </div>
+
+          <div className="match-details-card__content">
+            <div className="match-details-grid">
+              <div className="match-details-box">
+                <span className="match-details-box__label">Date</span>
+                <span className="match-details-box__value">{match.date}</span>
+              </div>
+
+              <div className="match-details-box">
+                <span className="match-details-box__label">Round</span>
+                <span className="match-details-box__value">{match.round}</span>
+              </div>
+
+              <div className="match-details-box">
+                <span className="match-details-box__label">Referee</span>
+                <span className="match-details-box__value">{match.referee}</span>
+              </div>
+            </div>
+
             <p>
               <strong>Stadium:</strong> {match.stadium}
             </p>
-            <p>
-              <strong>Score:</strong> {match.score}
-            </p>
+
+            <p>{match.description}</p>
 
             <Link to="/matches" className="details-back-button">
               Back to Matches

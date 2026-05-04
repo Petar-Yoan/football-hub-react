@@ -51,7 +51,12 @@
     "awayTeam": "SL Benfica",
     "date": "2026-05-15",
     "stadium": "Estadio Jose Alvalade",
-    "score": "2:1"
+    "score": "2:1",
+    "competition": "Primeira Liga",
+    "round": "Round 31",
+    "referee": "Artur Soares Dias",
+    "status": "Finished",
+    "description": "Sporting CP secured an important home win against Benfica in a heated Lisbon derby."
   },
   {
     "id": 2,
@@ -59,7 +64,12 @@
     "awayTeam": "Sporting CP",
     "date": "2026-05-18",
     "stadium": "Estadio do Dragao",
-    "score": "1:1"
+    "score": "1:1",
+    "competition": "Taca de Portugal",
+    "round": "Semi-final",
+    "referee": "Joao Pinheiro",
+    "status": "Finished",
+    "description": "A balanced clash ended in a draw, leaving the qualification race open."
   },
   {
     "id": 3,
@@ -67,7 +77,12 @@
     "awayTeam": "FC Porto",
     "date": "2026-05-22",
     "stadium": "Estadio da Luz",
-    "score": "3:2"
+    "score": "3:2",
+    "competition": "Primeira Liga",
+    "round": "Round 33",
+    "referee": "Luis Godinho",
+    "status": "Finished",
+    "description": "Benfica edged Porto in a dramatic five-goal showdown at Estadio da Luz."
   }
 ],
  "news": [
