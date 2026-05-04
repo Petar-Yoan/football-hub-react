@@ -268,3 +268,124 @@
   font-size: 22px;
   color: #1f2937;
 }
+
+.home-page {
+  padding: 32px;
+}
+
+.home-hero {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #ffffff;
+  padding: 56px 36px;
+  border-radius: 24px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.22);
+  margin-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: rgba(34, 197, 94, 0.18);
+  border-radius: 50%;
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.home-hero__label {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.home-hero h1 {
+  margin: 0 0 18px;
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+.home-hero p {
+  margin: 0 0 24px;
+  max-width: 700px;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.home-hero__button {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background-color: #22c55e;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.home-hero__button:hover {
+  transform: translateY(-2px);
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.home-news h2 {
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.news-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+  border-top: 6px solid #22c55e;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.18);
+}
+
+.news-card__tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #dcfce7;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.news-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.news-card p {
+  margin: 0;
+  color: #1f2937;
+  line-height: 1.7;
+}
