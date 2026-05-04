@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import { getAllTeams } from '../services/teamsService';
 
 type Team = {
@@ -68,6 +69,10 @@ function Teams() {
               <strong>Coach:</strong> {team.coach}
             </p>
             <p>{team.description}</p>
+
+            <Link to={`/teams/${team.id}`} className="details-button">
+              View Details
+            </Link>
           </article>
         ))}
       </div>

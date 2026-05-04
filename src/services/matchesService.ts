@@ -9,3 +9,13 @@ export async function getAllMatches() {
 
   return response.json();
 }
+
+export async function getMatchById(matchId: string) {
+  const response = await fetch(`${baseUrl}/${matchId}`);
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch match details.');
+  }
+
+  return response.json();
+}

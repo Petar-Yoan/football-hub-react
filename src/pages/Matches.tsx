@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import { getAllMatches } from '../services/matchesService';
 
 type Match = {
@@ -53,6 +54,10 @@ function Matches() {
                 <strong>Stadium:</strong> {match.stadium}
               </p>
             </div>
+
+            <Link to={`/matches/${match.id}`} className="details-button">
+              View Details
+            </Link>
           </article>
         ))}
       </div>
