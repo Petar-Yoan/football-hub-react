@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllNews } from '../services/newsService';
+import { Link } from 'react-router';
 
 type NewsItem = {
   id: number;
@@ -50,11 +51,19 @@ function Home() {
 
         <div className="news-list">
           {news.map((item) => (
-            <article key={item.id} className="news-card">
-              <span className="news-card__tag">Football News</span>
-              <h3>{item.title}</h3>
-              <p>{item.content}</p>
-            </article>
+           <article key={item.id} className="news-card">
+  <span className="news-card__tag">Football News</span>
+  <h3>{item.title}</h3>
+  <p>
+    {item.content.length > 140
+      ? `${item.content.slice(0, 140)}...`
+      : item.content}
+  </p>
+
+  <Link to={`/news/${item.id}`} className="details-button">
+    Read More
+  </Link>
+</article>
           ))}
         </div>
       </div>

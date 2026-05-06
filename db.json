@@ -95,6 +95,11 @@
       "id": "2",
       "title": "FC Porto Ready for the Clash",
       "content": "FC Porto is preparing for an important match against Sporting CP at Estadio do Dragao."
+    },
+    {
+      "title": "Benfica Prepares for the Big Derby",
+      "content": "Benfica is getting ready for an important clash against Sporting CP this weekend.",
+      "id": "o6HXIP3qaRY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

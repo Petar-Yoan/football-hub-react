@@ -1,5 +1,6 @@
 const teamsUrl = 'http://localhost:3000/teams';
 const matchesUrl = 'http://localhost:3000/matches';
+const newsUrl = 'http://localhost:3000/news';
 
 type TeamData = {
   name: string;
@@ -26,6 +27,11 @@ type MatchData = {
   referee: string;
   status: string;
   description: string;
+};
+
+type NewsData = {
+  title: string;
+  content: string;
 };
 
 export async function createTeam(teamData: TeamData) {
@@ -55,6 +61,22 @@ export async function createMatch(matchData: MatchData) {
 
   if (!response.ok) {
     throw new Error('Failed to create match.');
+  }
+
+  return response.json();
+}
+
+export async function createNews(newsData: NewsData) {
+  const response = await fetch(newsUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newsData),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to create news.');
   }
 
   return response.json();

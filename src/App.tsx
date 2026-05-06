@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Create from './pages/Create';
 import Profile from './pages/Profile';
+import NewsDetails from './pages/NewsDetails';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/matches/:matchId" element={<MatchDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/news/:newsId" element={<NewsDetails />} />
         <Route
           path="/create"
           element={

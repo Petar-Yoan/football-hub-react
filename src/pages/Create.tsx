@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { createMatch, createTeam } from '../services/createService';
+import { createMatch, createNews, createTeam } from '../services/createService';
 
 function Create() {
   const navigate = useNavigate();
@@ -30,6 +30,9 @@ function Create() {
   const [referee, setReferee] = useState('');
   const [status, setStatus] = useState('');
   const [matchDescription, setMatchDescription] = useState('');
+
+  const [newsTitle, setNewsTitle] = useState('');
+  const [newsContent, setNewsContent] = useState('');
 
   const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -76,40 +79,61 @@ function Create() {
       return;
     }
 
-    if (
-      !homeTeam.trim() ||
-      !awayTeam.trim() ||
-      !matchDate.trim() ||
-      !matchStadium.trim() ||
-      !score.trim() ||
-      !competition.trim() ||
-      !round.trim() ||
-      !referee.trim() ||
-      !status.trim() ||
-      !matchDescription.trim()
-    ) {
+    if (type === 'match') {
+      if (
+        !homeTeam.trim() ||
+        !awayTeam.trim() ||
+        !matchDate.trim() ||
+        !matchStadium.trim() ||
+        !score.trim() ||
+        !competition.trim() ||
+        !round.trim() ||
+        !referee.trim() ||
+        !status.trim() ||
+        !matchDescription.trim()
+      ) {
+        setError('Please fill in all fields.');
+        return;
+      }
+
+      try {
+        await createMatch({
+          homeTeam,
+          awayTeam,
+          date: matchDate,
+          stadium: matchStadium,
+          score,
+          competition,
+          round,
+          referee,
+          status,
+          description: matchDescription,
+        });
+
+        setError('');
+        navigate('/matches');
+      } catch {
+        setError('Failed to create match.');
+      }
+
+      return;
+    }
+
+    if (!newsTitle.trim() || !newsContent.trim()) {
       setError('Please fill in all fields.');
       return;
     }
 
     try {
-      await createMatch({
-        homeTeam,
-        awayTeam,
-        date: matchDate,
-        stadium: matchStadium,
-        score,
-        competition,
-        round,
-        referee,
-        status,
-        description: matchDescription,
+      await createNews({
+        title: newsTitle,
+        content: newsContent,
       });
 
       setError('');
-      navigate('/matches');
+      navigate('/');
     } catch {
-      setError('Failed to create match.');
+      setError('Failed to create news.');
     }
   };
 
@@ -131,6 +155,7 @@ function Create() {
             >
               <option value="team">Team</option>
               <option value="match">Match</option>
+              <option value="news">News</option>
             </select>
           </div>
 
@@ -195,7 +220,7 @@ function Create() {
                 Create Team
               </button>
             </>
-          ) : (
+          ) : type === 'match' ? (
             <>
               <div className="form-group">
                 <label htmlFor="match-home-team">Home Team</label>
@@ -254,6 +279,33 @@ function Create() {
 
               <button type="submit" className="form-button">
                 Create Match
+              </button>
+            </>
+          ) : (
+            <>
+              <div className="form-group">
+                <label htmlFor="news-title">News Title</label>
+                <input
+                  id="news-title"
+                  type="text"
+                  value={newsTitle}
+                  onChange={(event) => setNewsTitle(event.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+  <label htmlFor="news-content">News Content</label>
+  <textarea
+    id="news-content"
+    value={newsContent}
+    onChange={(event) => setNewsContent(event.target.value)}
+    className="form-textarea"
+    rows={8}
+  />
+</div>
+
+              <button type="submit" className="form-button">
+                Create News
               </button>
             </>
           )}
