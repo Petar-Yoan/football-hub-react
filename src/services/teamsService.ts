@@ -19,3 +19,13 @@ export async function getTeamById(teamId: string) {
 
   return response.json();
 }
+
+export async function deleteTeam(teamId: string) {
+  const response = await fetch(`${baseUrl}/${teamId}`, {
+    method: 'DELETE',
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to delete team.');
+  }
+}

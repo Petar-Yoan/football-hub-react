@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router';
-import { getTeamById } from '../services/teamsService';
+import { Link, useNavigate, useParams } from 'react-router';
+import { deleteTeam, getTeamById } from '../services/teamsService';
+import { useAuth } from '../contexts/AuthContext';
 
 type Team = {
   id: string;
@@ -35,6 +36,9 @@ function getTeamDetailsClass(name: string) {
 
 function TeamDetails() {
   const { teamId } = useParams();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
   const [team, setTeam] = useState<Team | null>(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -58,6 +62,25 @@ function TeamDetails() {
         setLoading(false);
       });
   }, [teamId]);
+
+  const deleteHandler = async () => {
+    if (!teamId) {
+      return;
+    }
+
+    const confirmed = window.confirm('Are you sure you want to delete this team?');
+
+    if (!confirmed) {
+      return;
+    }
+
+    try {
+      await deleteTeam(teamId);
+      navigate('/teams');
+    } catch {
+      setError('Failed to delete team.');
+    }
+  };
 
   return (
     <section className="page-section">
@@ -105,9 +128,17 @@ function TeamDetails() {
               </div>
             </div>
 
-            <Link to="/teams" className="details-back-button">
-              Back to Teams
-            </Link>
+            <div className="details-actions">
+              <Link to="/teams" className="details-back-button">
+                Back to Teams
+              </Link>
+
+              {user && (
+                <button type="button" className="delete-button" onClick={deleteHandler}>
+                  Delete Team
+                </button>
+              )}
+            </div>
           </div>
         </article>
       )}

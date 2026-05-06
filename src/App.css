@@ -605,3 +605,24 @@
 .form-card--wide {
   max-width: 700px;
 }
+
+.details-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.delete-button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background-color: #dc2626;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #991b1b;
+}
