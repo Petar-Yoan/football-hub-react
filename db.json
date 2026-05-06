@@ -1,100 +1,101 @@
 {
   "users": [],
   "teams": [
-  {
-    "id": "1",
-    "name": "Sporting CP",
-    "country": "Portugal",
-    "stadium": "Estadio Jose Alvalade",
-    "coach": "Rui Borges",
-    "imageUrl": "/images/sporting.png",
-    "description": "Sporting CP is one of the three biggest football clubs in Portugal.",
-    "founded": 1906,
-    "stadiumCapacity": 50095,
-    "leagueTitles": 21,
-    "cupTitles": 18,
-    "superCupTitles": 9
-  },
-  {
-    "id": "2",
-    "name": "SL Benfica",
-    "country": "Portugal",
-    "stadium": "Estadio da Luz",
-    "coach": "Bruno Lage",
-    "imageUrl": "/images/benfica.png",
-    "description": "SL Benfica is one of the most successful Portuguese football clubs.",
-    "founded": 1904,
-    "stadiumCapacity": 64642,
-    "leagueTitles": 38,
-    "cupTitles": 26,
-    "superCupTitles": 9
-  },
-  {
-    "id": "3",
-    "name": "FC Porto",
-    "country": "Portugal",
-    "stadium": "Estadio do Dragao",
-    "coach": "Martin Anselmi",
-    "imageUrl": "/images/porto.png",
-    "description": "FC Porto is one of the most successful and popular clubs in Portugal.",
-    "founded": 1893,
-    "stadiumCapacity": 50033,
-    "leagueTitles": 30,
-    "cupTitles": 20,
-    "superCupTitles": 24
-  }
-],
- "matches": [
-  {
-    "id": 1,
-    "homeTeam": "Sporting CP",
-    "awayTeam": "SL Benfica",
-    "date": "2026-05-15",
-    "stadium": "Estadio Jose Alvalade",
-    "score": "2:1",
-    "competition": "Primeira Liga",
-    "round": "Round 31",
-    "referee": "Artur Soares Dias",
-    "status": "Finished",
-    "description": "Sporting CP secured an important home win against Benfica in a heated Lisbon derby."
-  },
-  {
-    "id": 2,
-    "homeTeam": "FC Porto",
-    "awayTeam": "Sporting CP",
-    "date": "2026-05-18",
-    "stadium": "Estadio do Dragao",
-    "score": "1:1",
-    "competition": "Taca de Portugal",
-    "round": "Semi-final",
-    "referee": "Joao Pinheiro",
-    "status": "Finished",
-    "description": "A balanced clash ended in a draw, leaving the qualification race open."
-  },
-  {
-    "id": 3,
-    "homeTeam": "SL Benfica",
-    "awayTeam": "FC Porto",
-    "date": "2026-05-22",
-    "stadium": "Estadio da Luz",
-    "score": "3:2",
-    "competition": "Primeira Liga",
-    "round": "Round 33",
-    "referee": "Luis Godinho",
-    "status": "Finished",
-    "description": "Benfica edged Porto in a dramatic five-goal showdown at Estadio da Luz."
-  }
-],
- "news": [
-  {
-    "id": 1,
-    "title": "Big Derby in Lisbon",
-    "content": "Sporting CP will face SL Benfica in one of the biggest matches in Portuguese football."
-  },
-  {
-    "id": 2,
-    "title": "FC Porto Ready for the Clash",
-    "content": "FC Porto is preparing for an important match against Sporting CP at Estadio do Dragao."
-  }
-]
+    {
+      "id": "1",
+      "name": "Sporting CP",
+      "country": "Portugal",
+      "stadium": "Estadio Jose Alvalade",
+      "coach": "Rui Borges",
+      "imageUrl": "/images/sporting.png",
+      "description": "Sporting CP is one of the three biggest football clubs in Portugal.",
+      "founded": 1906,
+      "stadiumCapacity": 50095,
+      "leagueTitles": 21,
+      "cupTitles": 18,
+      "superCupTitles": 9
+    },
+    {
+      "id": "2",
+      "name": "SL Benfica",
+      "country": "Portugal",
+      "stadium": "Estadio da Luz",
+      "coach": "Bruno Lage",
+      "imageUrl": "/images/benfica.png",
+      "description": "SL Benfica is one of the most successful Portuguese football clubs.",
+      "founded": 1904,
+      "stadiumCapacity": 64642,
+      "leagueTitles": 38,
+      "cupTitles": 26,
+      "superCupTitles": 9
+    },
+    {
+      "id": "3",
+      "name": "FC Porto",
+      "country": "Portugal",
+      "stadium": "Estadio do Dragao",
+      "coach": "Martin Anselmi",
+      "imageUrl": "/images/porto.png",
+      "description": "FC Porto is one of the most successful and popular clubs in Portugal.",
+      "founded": 1893,
+      "stadiumCapacity": 50033,
+      "leagueTitles": 30,
+      "cupTitles": 20,
+      "superCupTitles": 24
+    }
+  ],
+  "matches": [
+    {
+      "id": "1",
+      "homeTeam": "Sporting CP",
+      "awayTeam": "SL Benfica",
+      "date": "2026-05-15",
+      "stadium": "Estadio Jose Alvalade",
+      "score": "2:1",
+      "competition": "Primeira Liga",
+      "round": "Round 31",
+      "referee": "Artur Soares Dias",
+      "status": "Finished",
+      "description": "Sporting CP secured an important home win against Benfica in a heated Lisbon derby."
+    },
+    {
+      "id": "2",
+      "homeTeam": "FC Porto",
+      "awayTeam": "Sporting CP",
+      "date": "2026-05-18",
+      "stadium": "Estadio do Dragao",
+      "score": "1:1",
+      "competition": "Taca de Portugal",
+      "round": "Semi-final",
+      "referee": "Joao Pinheiro",
+      "status": "Finished",
+      "description": "A balanced clash ended in a draw, leaving the qualification race open."
+    },
+    {
+      "id": "3",
+      "homeTeam": "SL Benfica",
+      "awayTeam": "FC Porto",
+      "date": "2026-05-22",
+      "stadium": "Estadio da Luz",
+      "score": "3:2",
+      "competition": "Primeira Liga",
+      "round": "Round 33",
+      "referee": "Luis Godinho",
+      "status": "Finished",
+      "description": "Benfica edged Porto in a dramatic five-goal showdown at Estadio da Luz."
+    }
+  ],
+  "news": [
+    {
+      "id": "1",
+      "title": "Big Derby in Lisbon",
+      "content": "Sporting CP will face SL Benfica in one of the biggest matches in Portuguese football."
+    },
+    {
+      "id": "2",
+      "title": "FC Porto Ready for the Clash",
+      "content": "FC Porto is preparing for an important match against Sporting CP at Estadio do Dragao."
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
