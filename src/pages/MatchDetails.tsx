@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router';
-import { getMatchById } from '../services/matchesService';
+import { Link, useNavigate, useParams } from 'react-router';
+import { deleteMatch, getMatchById } from '../services/matchesService';
+import { useAuth } from '../contexts/AuthContext';
 
 type Match = {
   id: number;
@@ -18,6 +19,9 @@ type Match = {
 
 function MatchDetails() {
   const { matchId } = useParams();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
   const [match, setMatch] = useState<Match | null>(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -41,6 +45,25 @@ function MatchDetails() {
         setLoading(false);
       });
   }, [matchId]);
+
+  const deleteHandler = async () => {
+    if (!matchId) {
+      return;
+    }
+
+    const confirmed = window.confirm('Are you sure you want to delete this match?');
+
+    if (!confirmed) {
+      return;
+    }
+
+    try {
+      await deleteMatch(matchId);
+      navigate('/matches');
+    } catch {
+      setError('Failed to delete match.');
+    }
+  };
 
   return (
     <section className="page-section">
@@ -86,9 +109,17 @@ function MatchDetails() {
 
             <p>{match.description}</p>
 
-            <Link to="/matches" className="details-back-button">
-              Back to Matches
-            </Link>
+            <div className="details-actions">
+              <Link to="/matches" className="details-back-button">
+                Back to Matches
+              </Link>
+
+              {user && (
+                <button type="button" className="delete-button" onClick={deleteHandler}>
+                  Delete Match
+                </button>
+              )}
+            </div>
           </div>
         </article>
       )}

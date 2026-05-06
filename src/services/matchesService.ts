@@ -19,3 +19,13 @@ export async function getMatchById(matchId: string) {
 
   return response.json();
 }
+
+export async function deleteMatch(matchId: string) {
+  const response = await fetch(`${baseUrl}/${matchId}`, {
+    method: 'DELETE',
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to delete match.');
+  }
+}
